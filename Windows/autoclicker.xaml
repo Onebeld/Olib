@@ -1,0 +1,100 @@
+﻿<Window x:Class="Olib.Windows.autoclicker"
+        x:Name="AutoclickerW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Olib.Windows"
+        mc:Ignorable="d"
+        Title="Autoclicker" Height="180" Width="325" ResizeMode="NoResize" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="AutoclickerW" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.3" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="3" Background="{DynamicResource backgroundControl}" Grid.Row="0">
+            <Border.Effect>
+                <DropShadowEffect Direction="-90" BlurRadius="20" RenderingBias="Quality" ShadowDepth="3" Opacity="0.4"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Margin="10,0,0,0">
+                    <Image Source="{StaticResource OlibDrawingImage}" Width="16" Margin="0,0,2,0"/>
+                    <TextBlock Text="Olib" VerticalAlignment="Center" Foreground="{DynamicResource foregroundControl}" FontFamily="{StaticResource Bauhaus93}" FontSize="14"/>
+                </StackPanel>
+                <Border Grid.ColumnSpan="3" MouseLeftButtonDown="Drag" Background="#00000000">
+                    <Border.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Скрыть" Click="Hide">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource hideDrawingImage}" Width="12"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Header="Закрыть" Click="MenuItem_Click" InputGestureText="Alt+F4">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource closeDrawingImage}" Width="12"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </ContextMenu>
+                    </Border.ContextMenu>
+                </Border>
+                <Label x:Name="textHeader" Content="{Binding Title, ElementName=AutoclickerW}" Panel.ZIndex="-1" Grid.Column="1" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" />
+                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                    <Button Style="{DynamicResource HeadeButton}" Width="40" Background="White" Click="Hide">
+                        <Image Width="16" Source="{StaticResource hideDrawingImage}"/>
+                    </Button>
+                    <Button Style="{DynamicResource HeadeButton}" Width="40" Background="White">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Completed="Close" Storyboard.TargetName="AutoclickerW" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                        <Image Width="16" Source="{StaticResource closeDrawingImage}"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Grid.RowSpan="2" Background="{DynamicResource backgroundBlack}" CornerRadius="3" Panel.ZIndex="-10" Visibility="Visible" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.Row="1">
+            <Label Content="F3 - начать/остановить автоклик" FontSize="14" HorizontalContentAlignment="Center"/>
+            <Label Content="Время автоклика в милисекундах:" FontSize="14" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="TextTime" Text="500" Margin="10,5,10,0" BorderThickness="0" Padding="5" HorizontalContentAlignment="Center" FontSize="14" TextChanged="Changed">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3" />
+                    </Style>
+                </TextBox.Resources>
+                <TextBox.Effect>
+                    <DropShadowEffect Direction="-90" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1" Opacity="0.4" />
+                </TextBox.Effect>
+            </TextBox>
+            <Label Content="Не рекомендуется ставить ниже 10!" Margin="0,10,0,0" Foreground="Red" FontSize="14" HorizontalContentAlignment="Center">
+                <Label.Effect>
+                    <DropShadowEffect x:Name="Warning" BlurRadius="0" ShadowDepth="0" Color="Red"/>
+                </Label.Effect>
+            </Label>
+        </StackPanel>
+    </Grid>
+</Window>

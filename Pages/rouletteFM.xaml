@@ -1,0 +1,117 @@
+﻿<Page x:Class="Olib.Pages.rouletteFM"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Olib"
+      xmlns:loc="clr-namespace:Olib.Local"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Свободная рулетка">
+    <Page.Resources>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <EventSetter Event="ContextMenuOpening" Handler="ListBoxItem_ContextMenuOpening"/>
+            <Setter Property="FontFamily" Value="{StaticResource OpenSans}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="Bd" Cursor="Hand" CornerRadius="3" BorderThickness="0" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true" IsManipulationEnabled="False">
+                            <Border.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem x:Name="MenuCopy" Header="{x:Static loc:Local.RouletteFXCopy}" Click="MenuCopy"/>
+                                    <MenuItem x:Name="MenuRe" Header="{x:Static loc:Local.RouletteFXEdit}" Click="OpenRename"  />
+                                    <MenuItem x:Name="MenuDel" Header="{x:Static loc:Local.RouletteFXDelete}" Click="MenuRe_Click"/>
+                                </ContextMenu>
+                            </Border.ContextMenu>
+                            <ContentPresenter x:Name="Content" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource backgroundListBox}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Selector.IsSelectionActive" Value="False"/>
+                                    <Condition Property="IsSelected" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="#FFDADADA"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Selector.IsSelectionActive" Value="True"/>
+                                    <Condition Property="IsSelected" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="#FF5A0F26"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition/>
+            <RowDefinition Height="52"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="10" Grid.RowSpan="3">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="name" KeyDown="name_KeyDown" FontSize="12" Width="132" HorizontalContentAlignment="Center"/>
+                <Button Style="{DynamicResource GlobalButton}" Click="NameR" Margin="5,0,0,0" Content="{x:Static loc:Local.RouletteFXButtonAdd}" Padding="10,0" FontSize="14"/>
+            </StackPanel>
+            <Label x:Name="ListName" Content="Без имени" FontSize="14" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+        <ListBox x:Name="List" Grid.Row="1" Margin="10" HorizontalContentAlignment="Center" BorderThickness="0" KeyDown="List_KeyDown" />
+            <StackPanel Grid.Row="2">
+            <Button Click="ButtClick" Style="{DynamicResource GlobalButton}" Content="{x:Static loc:Local.RouletteFXErase}" FontSize="14" Margin="10,0" VerticalAlignment="Top"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top" Margin="10,5" HorizontalAlignment="Center">
+                <Button Style="{DynamicResource GlobalButton}" Click="SaveXML" Content="Экспорт" Padding="10,0" Margin="0,0,5,0" Width="113"/>
+                <Button Style="{DynamicResource GlobalButton}" Click="OpenXML" Content="Импорт" Padding="10,0" Width="112"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="TextName" BorderThickness="0" Margin="0,0,0,10" FontSize="12" Padding="0,5" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="RdmGlobal" Text="{x:Static loc:Local.RouletteFXTwist}" BorderThickness="0" Width="400" Height="150" FontSize="16" HorizontalContentAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+                <Button Style="{DynamicResource GlobalButton}" Content="{x:Static loc:Local.RandomButtonTwist}" FontSize="14" Click="Button_Click_1" Padding="10,0"/>
+                <Button Style="{DynamicResource GlobalButton}" Content="{x:Static loc:Local.RandomButtonZeroOut}" FontSize="14" Margin="5,0,0,0" Click="Button_Click_2" Padding="10,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="{x:Static loc:Local.RouletteFXItems}" FontFamily="{StaticResource OpenSans}" Padding="0,5,0,0" HorizontalContentAlignment="Center"/>
+                <Label x:Name="indexs" Content="{Binding Items.Count, ElementName=List, StringFormat=Элементов: {0}}" FontFamily="{StaticResource OpenSans}" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+            <Label x:Name="Error" Foreground="Red" FontFamily="{StaticResource OpenSans}" HorizontalContentAlignment="Center">
+                <Label.Effect>
+                    <DropShadowEffect x:Name="Warning" BlurRadius="0" ShadowDepth="0" Color="Red"/>
+                </Label.Effect>
+            </Label>
+            <Label x:Name="Complete" Foreground="LawnGreen" FontFamily="{StaticResource OpenSans}" HorizontalContentAlignment="Center">
+                <Label.Effect>
+                    <DropShadowEffect x:Name="Completed" BlurRadius="0" ShadowDepth="0" Color="LawnGreen"/>
+                </Label.Effect>
+            </Label>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="0,0,10,10" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Style="{DynamicResource GlobalButton}" Content="Сохранить" Padding="10,0" Margin="0,0,5,0" Click="Save"/>
+            <Button Style="{DynamicResource GlobalButton}" Content="Настройки" Padding="10,0" Margin="0,0,5,0" Click="Button_Click"/>
+            <Button Style="{DynamicResource GlobalButton}" Click="NormalMode">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                        <Image Source="{StaticResource rouletteDrawingImage}" Width="20" Margin="0,0,5,0"/>
+                        <TextBlock Text="Обычный режим" FontSize="13" />
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,31 @@
+<Global>
+    <name>Olib</name>
+    <version>2.1.0.0</version>
+    <url>https://raw.githubusercontent.com/BigBoss500/Jekyll/master/updater/bin/Debug/updater.exe</url>
+</Global>
+<Files>
+    <file>https://github.com/BigBoss500/Olib/raw/master/bin/Release/Olib.exe</file>
+    <file>https://raw.githubusercontent.com/BigBoss500/Olib/master/bin/Release/Olib.exe.config</file>
+    <file>https://raw.githubusercontent.com/BigBoss500/Olib/master/bin/Release/Olib.exe.manifest</file>
+    <file>https://github.com/BigBoss500/Olib/raw/master/bin/Release/ru-RU/Olib.resources.dll</file>
+    <file>https://github.com/BigBoss500/Olib/raw/master/bin/Release/fr-FR/Olib.resources.dll</file>
+    <file>https://github.com/BigBoss500/Olib/raw/master/OlibHost/OlibHost/bin/Release/OlibHost.exe</file>
+    <file>https://raw.githubusercontent.com/BigBoss500/Olib/master/OlibHost/OlibHost/bin/Release/OlibHost.exe.config</file>
+    <file>https://github.com/BigBoss500/Olib/raw/master/OlibHost/OlibHost/bin/Release/OlibWCF.dll</file>
+    <file>https://raw.githubusercontent.com/BigBoss500/Olib/master/OlibHost/OlibHost/bin/Release/OlibWCF.dll.config</file>
+</Files>
+<FileNames>
+    <filename>Olib.exe</filename>
+    <filename>Olib.exe.config</filename>
+    <filename>Olib.exe.manifest</filename>
+    <filename>ru-RU/Olib.resources.dll</filename>
+    <filename>fr-FR/Olib.resources.dll</filename>
+    <filename>OlibHost.exe</filename>
+    <filename>OlibHost.exe.config</filename>
+    <filename>OlibWCF.dll</filename>
+    <filename>OlibWCF.dll.config</filename>
+</FileNames>
+<FileDirectorys>
+    <directory>ru-RU/</directory>
+    <directory>fr-FR/</directory>
+</FileDirectorys>

@@ -1,0 +1,184 @@
+﻿<Window x:Class="Olib.MainWindow"
+        x:Name="mainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Olib"
+        mc:Ignorable="d"
+        Closed="Close"
+        Closing="mainWindow_Closing"
+        Loaded="mainWindow_Loaded"
+        Title="Olib" Height="450" Width="800" MinHeight="440" MinWidth="670" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="mainWindow" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.3" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" UseAeroCaptionButtons="False"/>
+    </WindowChrome.WindowChrome>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="410*"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="borderHide" Background="Black" CornerRadius="0,0,3,3" Grid.Row="1" Opacity="0"  MouseDown="ClickHideBorder" IsEnabled="False" Visibility="Hidden"/>
+        <Border x:Name="sideBar" Background="{DynamicResource hideMenuBackground}" Grid.Column="0" Grid.Row="1" CornerRadius="0,3,3,3" Width="0" HorizontalAlignment="Left">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Right" Width="260" VirtualizingPanel.ScrollUnit="Pixel">
+                <StackPanel HorizontalAlignment="Right" Width="260">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="{StaticResource OlibDrawingImage}" Width="85" Margin="0,5,0,0"/>
+                        <TextBlock Text="Olib" FontFamily="{StaticResource Bauhaus93}" Foreground="{DynamicResource foregroundControl}" Margin="5,0,0,0" FontSize="50" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <Button Style="{DynamicResource HeadeButton}" Padding="0,5" HorizontalContentAlignment="Left" Background="White" Margin="0,10,0,0" FontSize="18" Click="MainPage">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+                                <Image Source="{StaticResource mainDrawingImage}" Width="25" />
+                                <TextBlock Text="Главная" Margin="15,0,0,0"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Style="{DynamicResource HeadeButton}" Click="Roulette" Padding="0,5" HorizontalContentAlignment="Left" Background="White" FontSize="18">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+                                <Image Source="{StaticResource rouletteDrawingImage}" Width="25" />
+                                <TextBlock Text="Рулетка" Margin="15,0,0,0"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Style="{DynamicResource HeadeButton}" Click="Button_Click" Padding="0,5" HorizontalContentAlignment="Left" Background="White" FontSize="18">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+                                <Image Source="{StaticResource converterDrawingImage}" Width="25" />
+                                <TextBlock Text="Конвертер" Margin="15,0,0,0"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Style="{DynamicResource HeadeButton}" Padding="0,5" HorizontalContentAlignment="Left" Background="White" FontSize="18" Click="DataParser">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+                                <Image Source="{StaticResource dataparsingDrawingImage}" Width="25" />
+                                <TextBlock Text="Data Parser" Margin="15,0,0,0"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Style="{DynamicResource HeadeButton}" Padding="0,5" HorizontalContentAlignment="Left" Background="White" FontSize="18" Click="Autoclicker">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+                                <Image Source="{StaticResource autoclickerDrawingImage}" Width="25" />
+                                <TextBlock Text="Autoclicker" Margin="15,0,0,0"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Style="{DynamicResource HeadeButton}" Padding="0,5" HorizontalContentAlignment="Left" Background="White" FontSize="18" Click="DarkChat">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+                                <Image Source="{StaticResource darkChatDrawingImage}" Width="25" />
+                                <TextBlock Text="Dark Chat" Margin="15,0,0,0"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Line Stroke="{DynamicResource colorWhiteBlack}" X1="0" Y1="0" X2="170" Y2="0" HorizontalAlignment="Center" Margin="0,5"/>
+                    <TextBlock x:Name="Author" Text="Автор: Дмитрий Мирзоян" Foreground="{DynamicResource foregroundControl}" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="Version" Text="Версия: 2.0.0.0" Foreground="{DynamicResource foregroundControl}" HorizontalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5">
+                        <Button Style="{DynamicResource HeadeButton1}" Background="White" Click="LinkVK">
+                            <Image Source="{StaticResource VK_Blue_LogoDrawingImage}" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
+                        <Button Margin="5,0,0,0" Style="{DynamicResource HeadeButton}" Background="White" Click="LinkGitHub">
+                            <Button.Content>
+                                <Image Source="{StaticResource GitHubDrawingImage}" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+                    <ComboBox x:Name="cbThemes" Margin="10,0" SelectionChanged="cbThemes_SelectionChanged"/>
+                    <Button x:Name="ButtUpdate" Margin="0,10,0,0" Padding="40,0" Content="Обновить" Style="{StaticResource HeadeButton}" Background="#FFE4E4E4" HorizontalAlignment="Center" Visibility="Hidden"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+        <Border CornerRadius="3" Background="{DynamicResource backgroundControl}">
+            <Border.Effect>
+                <DropShadowEffect Direction="-90" BlurRadius="20" RenderingBias="Quality" ShadowDepth="3" Opacity="0.4"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="GlobalButton" Style="{DynamicResource HeadeButton1}" Background="White" Panel.ZIndex="1" Click="SideBar">
+                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                        <Image Source="{StaticResource OlibDrawingImage}" Width="16" Margin="0,0,2,0"/>
+                        <TextBlock Text="Olib" VerticalAlignment="Center" FontFamily="{StaticResource Bauhaus93}" FontSize="14"/>
+                    </StackPanel>
+                </Button>
+                <Border Grid.ColumnSpan="3" MouseLeftButtonDown="Drag" MouseMove="OnMouseMove" MouseLeftButtonUp="OnMouseLeftButtonUp" Background="#00000000">
+                    <Border.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Назад" Click="Back">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource backDrawingImage}" Width="12"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Свернуть" Click="Hide">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource hideDrawingImage}" Width="12"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem x:Name="FullMenu" Header="Развернуть" Click="Full">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource fullDrawingImage}" Width="12"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Header="Закрыть" Click="MenuItem_Click" InputGestureText="Alt+F4">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource closeDrawingImage}" Width="12"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </ContextMenu>
+                    </Border.ContextMenu>
+                </Border>
+                <Label x:Name="textHeader" Content="Заголовок" Panel.ZIndex="-1" Grid.Column="1" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" />
+                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                    <Button Style="{DynamicResource HeadeButton}" Width="40" Click="Back" Background="White">
+                        <Image Width="16" Source="{StaticResource backDrawingImage}"/>
+                    </Button>
+                    <Button Style="{DynamicResource HeadeButton}" Width="40" Background="White" Click="Hide">
+                        <Image Width="16" Source="{StaticResource hideDrawingImage}"/>
+                    </Button>
+                    <Button Style="{DynamicResource HeadeButton}" Width="40" Click="Full" Background="White">
+                        <Image Width="16" Source="{StaticResource fullDrawingImage}" />
+                    </Button>
+                    <Button Style="{DynamicResource HeadeButton}" Width="40" Background="White">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Completed="Close" Storyboard.TargetName="mainWindow" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                        <Image Width="16" Source="{StaticResource closeDrawingImage}"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Grid.RowSpan="2" Background="{DynamicResource backgroundBlack}" CornerRadius="3" Panel.ZIndex="-10" Visibility="Visible"/>
+        <Frame x:Name="frame" Grid.Row="1" Source="Pages/main.xaml" Panel.ZIndex="-5" Navigated="Navigated" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

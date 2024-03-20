@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutoclickerControl" xml:space="preserve">
+    <value>F2 - начать/остановить автоклик</value>
+  </data>
+  <data name="AutoclickerH" xml:space="preserve">
+    <value>Управление:</value>
+  </data>
+  <data name="AutoclickerTime" xml:space="preserve">
+    <value>Время автоклика в миллисекундах:</value>
+  </data>
+  <data name="AutoclickerWarning" xml:space="preserve">
+    <value>Внимание! Не рекомендуется ставить меньше 5-ти!</value>
+  </data>
+  <data name="ButtonAbout" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="ButtonAutoclickerToolTip" xml:space="preserve">
+    <value>Активировать эффективный автокликер</value>
+  </data>
+  <data name="ButtonBackToolTip" xml:space="preserve">
+    <value>Вернуться на предыдущую страницу</value>
+  </data>
+  <data name="ButtonCloseToolTip" xml:space="preserve">
+    <value>Закрыть программу</value>
+  </data>
+  <data name="ButtonConverter" xml:space="preserve">
+    <value>Конвертер</value>
+  </data>
+  <data name="ButtonConverterToolTip" xml:space="preserve">
+    <value>Конвертировать значения</value>
+  </data>
+  <data name="ButtonDataParserToolTip" xml:space="preserve">
+    <value>Активировать парсер данных</value>
+  </data>
+  <data name="ButtonGlobal" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="ButtonGlobalToolTip" xml:space="preserve">
+    <value>Перейти на главную</value>
+  </data>
+  <data name="ButtonMinimToolTip" xml:space="preserve">
+    <value>Скрыть программу</value>
+  </data>
+  <data name="ButtonRoulette" xml:space="preserve">
+    <value>Рулетка</value>
+  </data>
+  <data name="ButtonRouletteToolTip" xml:space="preserve">
+    <value>Сыграть в рулетку</value>
+  </data>
+  <data name="ConverterArea" xml:space="preserve">
+    <value>Площадь</value>
+  </data>
+  <data name="ConverterBinary" xml:space="preserve">
+    <value>Двоичный</value>
+  </data>
+  <data name="ConverterCurrency" xml:space="preserve">
+    <value>Валюта</value>
+  </data>
+  <data name="ConverterData" xml:space="preserve">
+    <value>Данные</value>
+  </data>
+  <data name="ConverterDecimal" xml:space="preserve">
+    <value>Десятичный</value>
+  </data>
+  <data name="ConverterLength" xml:space="preserve">
+    <value>Длина</value>
+  </data>
+  <data name="ConverterMass" xml:space="preserve">
+    <value>Масса</value>
+  </data>
+  <data name="ConverterPressure" xml:space="preserve">
+    <value>Давление</value>
+  </data>
+  <data name="ConverterRuble" xml:space="preserve">
+    <value>Рубль</value>
+  </data>
+  <data name="ConverterSource" xml:space="preserve">
+    <value>https://www.cbr-xml-daily.ru/daily_utf8.xml</value>
+  </data>
+  <data name="ConverterTemperature" xml:space="preserve">
+    <value>Температура</value>
+  </data>
+  <data name="InfoAuthor" xml:space="preserve">
+    <value>Автор: Дмитрий Жутков</value>
+  </data>
+  <data name="InfoAuthor2" xml:space="preserve">
+    <value>Автор: Дмитрий Мирзоян</value>
+  </data>
+  <data name="InfoButtonAcknowledgments" xml:space="preserve">
+    <value>Благодарности</value>
+  </data>
+  <data name="InfoButtonAcknowledgmentsToolTip" xml:space="preserve">
+    <value>Посмотреть список благодарностей</value>
+  </data>
+  <data name="InfoButtonToSupport" xml:space="preserve">
+    <value>Поддержать</value>
+  </data>
+  <data name="InfoDataVersion" xml:space="preserve">
+    <value>Версия от 17 сентября 2019 года</value>
+  </data>
+  <data name="InfoDescription" xml:space="preserve">
+    <value>Программа создана для упрощения задач и развлечении.</value>
+  </data>
+  <data name="InfoDownloadCompleted" xml:space="preserve">
+    <value>Скачивание завершено, запуск...</value>
+  </data>
+  <data name="InfoDownloadingUpdate" xml:space="preserve">
+    <value>Скачивание...</value>
+  </data>
+  <data name="InfoErrorDownload" xml:space="preserve">
+    <value>Не удалось загрузить обновление</value>
+  </data>
+  <data name="InfoGitHubToolTip" xml:space="preserve">
+    <value>Перейти на репозитории программы</value>
+  </data>
+  <data name="InfoLatestUpdate" xml:space="preserve">
+    <value>Установлено последнее обновление</value>
+  </data>
+  <data name="InfoNewUpdate" xml:space="preserve">
+    <value>Доступно обновление до v</value>
+  </data>
+  <data name="InfoReferences" xml:space="preserve">
+    <value>Ссылки:</value>
+  </data>
+  <data name="InfoToSupportToolTip" xml:space="preserve">
+    <value>Помогите автору в дальнейшем развитии программы, задонатив определённую сумму</value>
+  </data>
+  <data name="InfoVKToolTip" xml:space="preserve">
+    <value>Перейти на группу ВК программы</value>
+  </data>
+  <data name="InfoWait" xml:space="preserve">
+    <value>Подождите...</value>
+  </data>
+  <data name="LabelContent1" xml:space="preserve">
+    <value>Чтобы использовать приложение, нажмите на кнопки ниже</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Перед тем, как вы начнёте использовать программу, Вы должны знать эти вещи:
+1. Программа ВСЕГДА будет запускаться только с правами администратора, это для загрузки обновлении без всяких нарекании на системном диске, также и с программой автообновления, чтобы редактировать: реестр, где, собственно, находится директория установленной программы; удалить старую версию программы и устанавливать новую на системном диске, при этом с самой системой ничего не будет;
+2. Программа — НЕ ВИРУС! Это просто ложное срабатывание антивируса, на самом деле всё безопасно;
+3. Насчёт приложения на Android: обновления будут реже выходить, раз в 3 больших версии на ПК;
+4. При использования Автокликера Вам не рекомендуется ставить значение ниже 10, это приведёт к внезапным последствиям при неосторожности (открытия окон, вкладок, кнопок и т.д.) или зависания программы/игры, Вам надо просто приостановить работу Автокликера временно, пока программа/игра не станет нормально дальше функционировать;
+5. При обнаружении какого-нибудь бага, нужно сообщить об этом в группе ВК Jekyll, желательно предоставить лог-файл для быстрого исправление этого бага, если возможно;
+6. Программа с открытым исходным кодом, выложенный на GitHub в свободном доступе. Если Вы, посмотрев код программы, хотите сделать замечание, также пишите в ЛС группы ВК;
+7. Если хотите предложить идею для программы, также пишите в ЛС группы ВК с подробностями их реализации;
+8. Обновления выходят тогда, когда это будет готово, вы же не хотите столкнуться с неприятным багом, ведь так?
+После прочтении ЛС, Вы подтверждаете его. Не волнуйтесь, больше не будет после принятии соглашения появляться этот назойловое окно. Но после обновления Вам, скорее всего, надо опять принять ЛС. Для того, чтобы использовать программу, Вам надо нажать</value>
+  </data>
+  <data name="LicenseAccept" xml:space="preserve">
+    <value>Принять</value>
+  </data>
+  <data name="LicenseChance1" xml:space="preserve">
+    <value>средней кнопкой мыши на кнопке закрытия программы.</value>
+  </data>
+  <data name="LicenseChance2" xml:space="preserve">
+    <value>правой кнопкой мыши на кнопке закрытия программы.</value>
+  </data>
+  <data name="LicenseChance3" xml:space="preserve">
+    <value>средней кнопкой мыши на кнопке Отказать.</value>
+  </data>
+  <data name="LicenseChance4" xml:space="preserve">
+    <value>правой кнопкой мыши на кнопке Отказать.</value>
+  </data>
+  <data name="LicenseChance5" xml:space="preserve">
+    <value>средней кнопкой мыши на кнопке Принять.</value>
+  </data>
+  <data name="LicenseChance6" xml:space="preserve">
+    <value>правой кнопкой мыши на кнопке Принять.</value>
+  </data>
+  <data name="LicenseHeading" xml:space="preserve">
+    <value>Лицензионное соглашение</value>
+  </data>
+  <data name="LicenseMessage1" xml:space="preserve">
+    <value>Сначала Вы должны прочитать лицензионное соглашение!</value>
+  </data>
+  <data name="LicenseMessage2" xml:space="preserve">
+    <value>Не так быстро! Вы всё равно должны прочитать лицензионное соглашение.</value>
+  </data>
+  <data name="LicenseMessage3" xml:space="preserve">
+    <value>Я знаю, что Вы хотите запустить программу, но всё равно надо прочитать лицензионное соглашение.</value>
+  </data>
+  <data name="LicenseMessage4" xml:space="preserve">
+    <value>Я понял, в чём дело! Вы хотите со мной поиграть в игру \"Сколько раз нажмёте Принять\". Сейчас Ваш счёт:</value>
+  </data>
+  <data name="LicenseMessage5" xml:space="preserve">
+    <value>Ваш счёт:</value>
+  </data>
+  <data name="LicenseRefuse" xml:space="preserve">
+    <value>Отказать</value>
+  </data>
+  <data name="ParseXMLButton1" xml:space="preserve">
+    <value>Узнать</value>
+  </data>
+  <data name="ParseXMLButton2" xml:space="preserve">
+    <value>Очистить список</value>
+  </data>
+  <data name="ParseXMLButton3" xml:space="preserve">
+    <value>Сохранить в файл</value>
+  </data>
+  <data name="ParseXMLLabelComboBox1" xml:space="preserve">
+    <value>ID ВКонтакте</value>
+  </data>
+  <data name="ParseXMLLabelComboBox2" xml:space="preserve">
+    <value>IP адрес</value>
+  </data>
+  <data name="ParseXMLLabelComboBox3" xml:space="preserve">
+    <value>Номер телефона:</value>
+  </data>
+  <data name="ParseXMLListSave" xml:space="preserve">
+    <value>Сохранено!</value>
+  </data>
+  <data name="ParseXMLNoList" xml:space="preserve">
+    <value>Сначала заполните список!</value>
+  </data>
+  <data name="ParseXMLNoParse" xml:space="preserve">
+    <value>Вы не можете парсить пустое поле!</value>
+  </data>
+  <data name="RandomButtonCheckName" xml:space="preserve">
+    <value>Вывести</value>
+  </data>
+  <data name="RandomButtonCheckNameToolTip" xml:space="preserve">
+    <value>Вывести данные внизу</value>
+  </data>
+  <data name="RandomButtonFreeMode" xml:space="preserve">
+    <value>Свободный режим</value>
+  </data>
+  <data name="RandomButtonFreeModeToolTip" xml:space="preserve">
+    <value>Создание своей рулетки</value>
+  </data>
+  <data name="RandomButtonTwist" xml:space="preserve">
+    <value>Крутить</value>
+  </data>
+  <data name="RandomButtonTwistExpectation" xml:space="preserve">
+    <value>Пожалуйста, подождите...</value>
+  </data>
+  <data name="RandomButtonTwistOut" xml:space="preserve">
+    <value>Выпадает:</value>
+  </data>
+  <data name="RandomButtonTwistToolTip" xml:space="preserve">
+    <value>Испытать удачу</value>
+  </data>
+  <data name="RandomButtonZeroOut" xml:space="preserve">
+    <value>Обнулить</value>
+  </data>
+  <data name="RandomButtonZeroOutToolTip" xml:space="preserve">
+    <value>Сбросить данные о выпаде элемента</value>
+  </data>
+  <data name="RandomStringName1" xml:space="preserve">
+    <value>Будем крутить для: Вы</value>
+  </data>
+  <data name="RandomStringName2" xml:space="preserve">
+    <value>Будем крутить для: </value>
+  </data>
+  <data name="RandomStringOptions" xml:space="preserve">
+    <value>Всего вариантов выпадения: </value>
+  </data>
+  <data name="RandomTextBoxNameToolTip" xml:space="preserve">
+    <value>Введите здесь имя и фамилию</value>
+  </data>
+  <data name="RandomTextBoxRdmGlobal" xml:space="preserve">
+    <value>Нажмите "Крутить", чтобы испытать удачу</value>
+  </data>
+  <data name="RouletteFX" xml:space="preserve">
+    <value>Свободная рулетка</value>
+  </data>
+  <data name="RouletteFXAddToolTip" xml:space="preserve">
+    <value>Добавить элемент в список</value>
+  </data>
+  <data name="RouletteFXButtonAdd" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="RouletteFXButtonEdit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="RouletteFXCheckBox1" xml:space="preserve">
+    <value>Стереть поле для ввода после добавление элемента</value>
+  </data>
+  <data name="RouletteFXCheckBox2" xml:space="preserve">
+    <value>Стереть все элементы после импорта XML/TXT-файла</value>
+  </data>
+  <data name="RouletteFXCheckBox3" xml:space="preserve">
+    <value>Исключить дубликатов при выборе элементов из списка</value>
+  </data>
+  <data name="RouletteFXCopy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="RouletteFXDelete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="RouletteFXEdit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="RouletteFXErase" xml:space="preserve">
+    <value>Стереть всё</value>
+  </data>
+  <data name="RouletteFXEraseToolTip" xml:space="preserve">
+    <value>Удалить все элементы из списка</value>
+  </data>
+  <data name="RouletteFXExport" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="RouletteFXExportToolTip" xml:space="preserve">
+    <value>Сохранить список элементов в XML/TXT-файл</value>
+  </data>
+  <data name="RouletteFXFileLoad" xml:space="preserve">
+    <value>Файл успешно загружен!</value>
+  </data>
+  <data name="RouletteFXFileSave" xml:space="preserve">
+    <value>Файл успешно сохранён! Путь: </value>
+  </data>
+  <data name="RouletteFXImport" xml:space="preserve">
+    <value>Импорт</value>
+  </data>
+  <data name="RouletteFXImportToolTip" xml:space="preserve">
+    <value>Загрузить элементы из XML/TXT-файла в список</value>
+  </data>
+  <data name="RouletteFXItems" xml:space="preserve">
+    <value>Элементов: </value>
+  </data>
+  <data name="RouletteFXListName" xml:space="preserve">
+    <value>Без имени</value>
+  </data>
+  <data name="RouletteFXNormalMode" xml:space="preserve">
+    <value>Нормальный режим</value>
+  </data>
+  <data name="RouletteFXNormalModeToolTip" xml:space="preserve">
+    <value>Перейти в обычный режим рулетки</value>
+  </data>
+  <data name="RouletteFXNullItem" xml:space="preserve">
+    <value>Нельзя изменить элемент на пустой!</value>
+  </data>
+  <data name="RouletteFXNullItemAdd" xml:space="preserve">
+    <value>Нельзя добавить пустой элемент!</value>
+  </data>
+  <data name="RouletteFXNumber" xml:space="preserve">
+    <value>Кол-во элементов для выбора:</value>
+  </data>
+  <data name="RouletteFXRenameCloseToolTip" xml:space="preserve">
+    <value>Закрыть панель изменения</value>
+  </data>
+  <data name="RouletteFXRenameToolTip" xml:space="preserve">
+    <value>Изменить элемент</value>
+  </data>
+  <data name="RouletteFXSelections" xml:space="preserve">
+    <value>Время выбора в секундах:</value>
+  </data>
+  <data name="RouletteFXSettings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="RouletteFXSettingsCToolTip" xml:space="preserve">
+    <value>Закрыть панель настроек</value>
+  </data>
+  <data name="RouletteFXSettingsToolTip" xml:space="preserve">
+    <value>Открыть панель настроек</value>
+  </data>
+  <data name="RouletteFXTextBoxNameToolTip" xml:space="preserve">
+    <value>Введите здесь название элемента</value>
+  </data>
+  <data name="RouletteFXTextBoxRToolTip" xml:space="preserve">
+    <value>Введите здесь название элемента, которого вы хотите изменить</value>
+  </data>
+  <data name="RouletteFXTextChanToolTip" xml:space="preserve">
+    <value>Введите здесь ваш текст</value>
+  </data>
+  <data name="RouletteFXTwist" xml:space="preserve">
+    <value>Нажмите "Крутить"</value>
+  </data>
+  <data name="RouletteFXTwistToolTip" xml:space="preserve">
+    <value>Выбрать элемент из списка</value>
+  </data>
+  <data name="RouletteFXZeroOutToolTip" xml:space="preserve">
+    <value>Обнулить данные о выпаде элемента из списка</value>
+  </data>
+  <data name="StringException" xml:space="preserve">
+    <value>Исключение:</value>
+  </data>
+  <data name="ToolTipAbout" xml:space="preserve">
+    <value>Информация о программе</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Добро пожаловать!</value>
+  </data>
+  <data name="WindowClose" xml:space="preserve">
+    <value>Закрыть окно</value>
+  </data>
+  <data name="WindowMaximized" xml:space="preserve">
+    <value>Развернуть окно</value>
+  </data>
+  <data name="WindowRollup" xml:space="preserve">
+    <value>Свернуть окно</value>
+  </data>
+</root>
